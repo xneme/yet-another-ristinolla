@@ -2,7 +2,7 @@ commit 17adf4603ec8c906be99bc4ed5fbdfa3b3d8a5cc
 Author: Jere Helén <xneme@me.com>
 Date:   Fri Mar 16 16:04:25 2018 +0200
 
-    muuteltu tiedostoja
+    muokattu historiaa
 
  tiedostoja/file1  | 0
  tiedostoja/file2  | 0
