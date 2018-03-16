@@ -1,4 +1,4 @@
-# OTM-harjoitustyö
+# Ohjelmistotuotannon menetelmät-harjoitustyö
 _Lisää **ristinollaa** ohjaajien iloksi._
 
 ## Tehtävät
