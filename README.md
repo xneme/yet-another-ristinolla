@@ -5,6 +5,7 @@ _Lisää **ristinollaa** ohjaajien iloksi._
 3x3 perinteinen ristinolla tekstikäyttöliittymällä.
 
 [Alustava määrittelydokumentti](/documentation/vaatimusmaarittely.md)
+
 [Tuntikirjanpito](/documentation/tuntikirjanpito.md)
 
 ## Komentorivitoiminnot
