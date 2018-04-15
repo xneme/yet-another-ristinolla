@@ -6,4 +6,5 @@
 |       | 2    | 3x3 sovelluslogiikka |
 |       | 1    | tekstikäyttölittymä |
 |       | 1    | ensimmäiset testit |
-| yht   | 6    | |
+| 15.4. | 4    | laudan tarkistus omaan luokkaansa |
+| yht   | 9    | |

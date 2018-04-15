@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class ThreeByThree implements GameLogic {
 
+    BoardChecker checker;
     int[][] board;
     boolean[][] legalmoves;
     int turn;
@@ -11,32 +12,28 @@ public class ThreeByThree implements GameLogic {
     boolean active;
 
     public ThreeByThree() {
+        checker = new BoardChecker();
         this.board = new int[3][3];
-        this.legalmoves = new boolean[3][3];
-        for (int y = 0; y < 3; y++) {
-            for (int x = 0; x < 3; x++) {
-                legalmoves[y][x] = true;
-            }
-        }
+        this.legalmoves = checker.getLegalMoves(board);
         this.turn = 1;
         this.winner = 0;
         this.active = true;
     }
 
     public ThreeByThree(int[][] board, int turn) {
+        checker = new BoardChecker();
         this.board = board;
-        this.legalmoves = new boolean[3][3];
-        for (int y = 0; y < 3; y++) {
-            for (int x = 0; x < 3; x++) {
-                if (board[y][x] == 0) {
-                    legalmoves[y][x] = true;
-                }
-            }
-        }
+        this.legalmoves = checker.getLegalMoves(board);
         this.turn = turn;
         this.winner = 0;
         this.active = true;
-        this.checkBoard();
+        int status = checker.getWinner(board, 3);
+        if (status != 0) {
+            this.winner = status;
+            this.active = false;
+        } else if (!checker.hasLegalMovesLeft(board)) {
+            this.active = false;
+        }
     }
 
     @Override
@@ -62,50 +59,19 @@ public class ThreeByThree implements GameLogic {
         if (this.legalmoves[y][x]) {
             this.board[y][x] = this.turn;
             this.legalmoves[y][x] = false;
+
+            int status = checker.getWinner(board, 3);
+            if (status != 0) {
+                this.winner = status;
+                this.active = false;
+            } else if (!checker.hasLegalMovesLeft(board)) {
+                this.active = false;
+            }
             this.switchTurn();
-            this.checkBoard();
             return true;
         }
 
         return false;
-    }
-
-    private void checkBoard() {
-        this.active = false;
-        for (int y = 0; y < 3; y++) {
-            for (int x = 0; x < 3; x++) {
-                if (legalmoves[y][x]) {
-                    this.active = true;
-                }
-            }
-        }
-
-        for (int y = 0; y < 3; y++) {
-            int sumx = 0;
-            int sumy = 0;
-            for (int x = 0; x < 3; x++) {
-                sumx += board[y][x];
-                sumy += board[x][y];
-            }
-            if (sumx > 2 || sumx < -2 || sumy > 2 || sumy < -2) {
-                this.endGame();
-                return;
-            }
-        }
-
-        int diag1 = board[0][0] + board[1][1] + board[2][2];
-        int diag2 = board[2][0] + board[1][1] + board[0][2];
-
-        if (diag1 > 2 || diag1 < -2 || diag2 > 2 || diag2 < -2) {
-            this.endGame();
-        }
-    }
-
-    private void endGame() {
-        this.active = false;
-        this.switchTurn();
-        this.winner = this.turn;
-        this.switchTurn();
     }
 
     @Override
@@ -126,12 +92,7 @@ public class ThreeByThree implements GameLogic {
     @Override
     public void reset() {
         this.board = new int[3][3];
-        this.legalmoves = new boolean[3][3];
-        for (int y = 0; y < 3; y++) {
-            for (int x = 0; x < 3; x++) {
-                legalmoves[y][x] = true;
-            }
-        }
+        this.legalmoves = checker.getLegalMoves(board);
         this.turn = 1;
         this.winner = 0;
         this.active = true;
