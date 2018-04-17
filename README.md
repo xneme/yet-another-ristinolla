@@ -35,3 +35,13 @@ mvn package
 ```
 
 generoi hakemistoon _target_ suoritettavan jar-tiedoston _yet-another-ristinolla-1.0-SNAPSHOT.jar_
+
+### Checkstyle
+
+Tiedostoon [checkstyle.xml](https://github.com/xneme/yet-another-ristinolla/blob/master/yet-another-ristinolla/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
+
+```
+ mvn jxr:jxr checkstyle:checkstyle
+```
+
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
