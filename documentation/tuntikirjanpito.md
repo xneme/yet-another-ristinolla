@@ -7,4 +7,5 @@
 |       | 1    | tekstikäyttölittymä |
 |       | 1    | ensimmäiset testit |
 | 15.4. | 4    | laudan tarkistus omaan luokkaansa |
-| yht   | 9    | |
+| 17.4. | 1    | arkkitehtuuridokumentti |
+| yht   | 10   | |

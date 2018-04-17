@@ -6,6 +6,8 @@ _Lisää **ristinollaa** ohjaajien iloksi._
 
 [Alustava määrittelydokumentti](/documentation/vaatimusmaarittely.md)
 
+[Arkkitehtuurikuvaus](/documents/arkkitehtuuri.md)
+
 [Tuntikirjanpito](/documentation/tuntikirjanpito.md)
 
 ## Komentorivitoiminnot
