@@ -2,13 +2,17 @@
 _Lisää **ristinollaa** ohjaajien iloksi._
 
 ## Yet-another-ristinolla
-3x3 perinteinen ristinolla tekstikäyttöliittymällä.
+3x3 perinteinen ristinolla graafisella käyttöliittymällä.
 
 [Alustava määrittelydokumentti](/documentation/vaatimusmaarittely.md)
 
 [Arkkitehtuurikuvaus](/documentation/arkkitehtuuri.md)
 
 [Tuntikirjanpito](/documentation/tuntikirjanpito.md)
+
+## Releaset
+
+[Viikko 5](https://github.com/xneme/yet-another-ristinolla/releases/tag/viikko5)
 
 ## Komentorivitoiminnot
 

@@ -9,4 +9,5 @@
 | 15.4. | 4    | laudan tarkistus omaan luokkaansa |
 | 17.4. | 1    | arkkitehtuuridokumentti |
 | 24.4. | 4    | graafinen käyttöliittymä|
-| yht   | 14   | |
+|       | 1    | sekvenssikaavio|
+| yht   | 15   | |
