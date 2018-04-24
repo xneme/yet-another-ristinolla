@@ -1,6 +1,8 @@
 package ristinolla.ui;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -8,6 +10,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import ristinolla.logic.GameLogic;
 import ristinolla.logic.ThreeByThree;
@@ -18,34 +21,47 @@ public class GraphicUI extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("yet-another-ristinolla");
         primaryStage.setScene(this.menu(primaryStage));
+        primaryStage.setWidth(640);
+        primaryStage.setHeight(480);
         primaryStage.show();
     }
 
     public Scene menu(Stage primaryStage) {
         BorderPane layout = new BorderPane();
+        layout.setPadding(new Insets(10, 10, 10, 10));
         VBox buttons = new VBox();
+        buttons.setPrefWidth(480);
+        buttons.setSpacing(5);
+        buttons.setPadding(new Insets(10, 10, 10, 10));
+        buttons.setAlignment(Pos.CENTER);
         Label info = new Label("Choose game mode!");
-        info.setFont(Font.font("Monospaced", 40));
+        info.setAlignment(Pos.CENTER);
+        info.setTextAlignment(TextAlignment.CENTER);
+        info.setPadding(new Insets(10, 10, 10, 10));
+        info.setFont(Font.font("Monospaced", 30));
 
         Button button = new Button("3x3");
-        button.setFont(Font.font("Monospaced", 40));
+        button.setMinWidth(buttons.getPrefWidth());
+        button.setFont(Font.font("Monospaced", 30));
         button.setOnAction((event) -> {
-            primaryStage.setScene(this.threeByThree());
+            primaryStage.setScene(this.threeByThree(primaryStage));
             primaryStage.show();
         });
         buttons.getChildren().add(button);
-        
-        Button button2 = new Button("unimplemented");
-        button2.setFont(Font.font("Monospaced", 40));
+
+        Button button2 = new Button("<future expansion>");
+        button2.setMinWidth(buttons.getPrefWidth());
+        button2.setFont(Font.font("Monospaced", 30));
         button2.setOnAction((event) -> {
-            
+
         });
         buttons.getChildren().add(button2);
-        
-        Button button3 = new Button("unimplemented");
-        button3.setFont(Font.font("Monospaced", 40));
+
+        Button button3 = new Button("<future expansion>");
+        button3.setMinWidth(buttons.getPrefWidth());
+        button3.setFont(Font.font("Monospaced", 30));
         button3.setOnAction((event) -> {
-            
+
         });
         buttons.getChildren().add(button3);
 
@@ -56,12 +72,19 @@ public class GraphicUI extends Application {
         return scene;
     }
 
-    public Scene threeByThree() {
+    public Scene threeByThree(Stage primaryStage) {
         GameLogic game = new ThreeByThree();
         BorderPane layout = new BorderPane();
         GridPane buttons = new GridPane();
+        buttons.setAlignment(Pos.CENTER);
         Label info = new Label("X's turn!");
         info.setFont(Font.font("Monospaced", 40));
+        Button menubutton = new Button("Back to menu");
+        menubutton.setFont(Font.font("Monospaced", 20));
+        menubutton.setOnAction((event) -> {
+            primaryStage.setScene(this.menu(primaryStage));
+            primaryStage.show();
+        });
 
         for (int i = 1; i <= 3; i++) {
             for (int j = 1; j <= 3; j++) {
@@ -78,6 +101,7 @@ public class GraphicUI extends Application {
 
         layout.setTop(info);
         layout.setCenter(buttons);
+        layout.setBottom(menubutton);
 
         Scene scene = new Scene(layout);
         return scene;

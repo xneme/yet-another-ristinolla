@@ -8,4 +8,5 @@
 |       | 1    | ensimmäiset testit |
 | 15.4. | 4    | laudan tarkistus omaan luokkaansa |
 | 17.4. | 1    | arkkitehtuuridokumentti |
-| yht   | 10   | |
+| 24.4. | 4    | graafinen käyttöliittymä|
+| yht   | 14   | |
