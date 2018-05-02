@@ -10,4 +10,6 @@
 | 17.4. | 1    | arkkitehtuuridokumentti |
 | 24.4. | 4    | graafinen käyttöliittymä|
 |       | 1    | sekvenssikaavio|
-| yht   | 15   | |
+| 2.5.  | 2    | nxn sovelluslogiikka, 10x10 graafinen versio|
+|       | 2    | javadoc, käyttöohje|
+| yht   | 19   | |

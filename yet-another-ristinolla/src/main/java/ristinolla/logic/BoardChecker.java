@@ -1,7 +1,16 @@
 package ristinolla.logic;
 
+/**
+ * Class for checking state of tic-tac-toe boards.
+ */
 public class BoardChecker {
-
+    
+    /**
+     * Checks a board for legal moves.
+     * 
+     * @param board valid 1/0/-1 tic-tac-toe board
+     * @return boolean[][] with true for squares available for playing
+     */
     public boolean[][] getLegalMoves(int[][] board) {
         boolean[][] legalMoves = new boolean[board.length][board[0].length];
 
@@ -16,6 +25,12 @@ public class BoardChecker {
         return legalMoves;
     }
 
+    /**
+     * Checks if board has legal moves left.
+     * 
+     * @param board valid 1/0/-1 tic-tac-toe board
+     * @return true if board has legal moves left
+     */
     public boolean hasLegalMovesLeft(int[][] board) {
         for (int y = 0; y < board.length; y++) {
             for (int x = 0; x < board[0].length; x++) {
@@ -27,7 +42,14 @@ public class BoardChecker {
 
         return false;
     }
-
+    
+    /**
+     * Checks board for a winner.
+     * 
+     * @param board valid 1/0/-1 tic-tac-toe board
+     * @param marksToWin number of marks in row to win
+     * @return 0 if no winner, 1 or -1 for a winner
+     */
     public int getWinner(int[][] board, int marksToWin) {
 
         if (marksToWin > board.length && marksToWin > board[0].length) {

@@ -2,7 +2,9 @@
 _Lisää **ristinollaa** ohjaajien iloksi._
 
 ## Yet-another-ristinolla
-3x3 perinteinen ristinolla graafisella käyttöliittymällä.
+3x3 ja 10x10 perinteinen ristinolla graafisella käyttöliittymällä.
+
+[Käyttöohje](/documentation/kayttoohje.md)
 
 [Alustava määrittelydokumentti](/documentation/vaatimusmaarittely.md)
 
@@ -13,6 +15,8 @@ _Lisää **ristinollaa** ohjaajien iloksi._
 ## Releaset
 
 [Viikko 5](https://github.com/xneme/yet-another-ristinolla/releases/tag/viikko5)
+
+[Viikko 6](https://github.com/xneme/yet-another-ristinolla/releases/tag/viikko6)
 
 ## Komentorivitoiminnot
 
@@ -41,6 +45,16 @@ mvn package
 ```
 
 generoi hakemistoon _target_ suoritettavan jar-tiedoston _yet-another-ristinolla-1.0-SNAPSHOT.jar_
+
+### JavaDoc
+
+JavaDoc generoidaan komennolla
+
+```
+mvn javadoc:javadoc
+```
+
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
 
 ### Checkstyle
 

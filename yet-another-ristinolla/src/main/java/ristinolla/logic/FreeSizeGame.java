@@ -2,14 +2,14 @@ package ristinolla.logic;
 
 public class FreeSizeGame implements GameLogic {
 
-    BoardChecker checker;
-    int[][] board;
-    boolean[][] legalmoves;
-    int turn;
-    int winner;
-    boolean active;
-    int marksToWin;
-    int size;
+    private BoardChecker checker;
+    private int[][] board;
+    private boolean[][] legalmoves;
+    private int turn;
+    private int winner;
+    private boolean active;
+    private int marksToWin; 
+   private int size;
 
     public FreeSizeGame(int size, int marksToWin) {
         checker = new BoardChecker();

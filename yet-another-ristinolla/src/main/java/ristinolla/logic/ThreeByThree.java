@@ -4,12 +4,12 @@ import java.util.Arrays;
 
 public class ThreeByThree implements GameLogic {
 
-    BoardChecker checker;
-    int[][] board;
-    boolean[][] legalmoves;
-    int turn;
-    int winner;
-    boolean active;
+    private BoardChecker checker;
+    private int[][] board;
+    private boolean[][] legalmoves;
+    private int turn;
+    private int winner;
+    private boolean active;
 
     public ThreeByThree() {
         checker = new BoardChecker();
