@@ -10,6 +10,7 @@
 | 17.4. | 1    | arkkitehtuuridokumentti |
 | 24.4. | 4    | graafinen käyttöliittymä|
 |       | 1    | sekvenssikaavio|
-| 2.5.  | 2    | nxn sovelluslogiikka, 10x10 graafinen versio|
+|  2.5. | 2    | nxn sovelluslogiikka, 10x10 graafinen versio|
 |       | 2    | javadoc, käyttöohje|
-| yht   | 19   | |
+| 11.5. | 5    | Ultimate-mode lisätty|
+| yht   | 24   | |

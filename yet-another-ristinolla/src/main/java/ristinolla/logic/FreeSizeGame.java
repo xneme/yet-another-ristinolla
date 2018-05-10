@@ -9,7 +9,7 @@ public class FreeSizeGame implements GameLogic {
     private int winner;
     private boolean active;
     private int marksToWin; 
-   private int size;
+    private int size;
 
     public FreeSizeGame(int size, int marksToWin) {
         checker = new BoardChecker();

@@ -4,10 +4,10 @@ package ristinolla.logic;
  * Class for checking state of tic-tac-toe boards.
  */
 public class BoardChecker {
-    
+
     /**
      * Checks a board for legal moves.
-     * 
+     *
      * @param board valid 1/0/-1 tic-tac-toe board
      * @return boolean[][] with true for squares available for playing
      */
@@ -26,8 +26,54 @@ public class BoardChecker {
     }
 
     /**
+     * Checks an ultimate tic-tac-toe board for legal moves.
+     *
+     * @param board valid 1/0/-1 ultimate tic-tac-toe int[3][3][3][3] board
+     * @return boolean[9][9] with true for squares available for playing
+     */
+    public boolean[][] getLegalMoves(int[][][][] board) {
+        boolean[][] legalMoves = new boolean[9][9];
+        for (int bigY = 0; bigY < 3; bigY++) {
+            for (int bigX = 0; bigX < 3; bigX++) {
+                for (int y = 0; y < board.length; y++) {
+                    for (int x = 0; x < board[0].length; x++) {
+                        if (board[bigY][bigX][y][x] == 0) {
+                            legalMoves[bigY * 3 + y][bigX * 3 + x] = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        return legalMoves;
+    }
+
+    /**
+     * Checks an ultimate tic-tac-toe board for legal moves for just one small
+     * board.
+     *
+     * @param board valid 1/0/-1 ultimate tic-tac-toe int[3][3][3][3] board
+     * @param bigX small board's x coord
+     * @param bigY small board's y coord
+     * @return boolean[9][9] with true for squares available for playing
+     */
+    public boolean[][] getLegalMoves(int[][][][] board, int bigX, int bigY) {
+        boolean[][] legalMoves = new boolean[9][9];
+
+        for (int y = 0; y < board.length; y++) {
+            for (int x = 0; x < board[0].length; x++) {
+                if (board[bigY][bigX][y][x] == 0) {
+                    legalMoves[bigY * 3 + y][bigX * 3 + x] = true;
+                }
+            }
+        }
+
+        return legalMoves;
+    }
+
+    /**
      * Checks if board has legal moves left.
-     * 
+     *
      * @param board valid 1/0/-1 tic-tac-toe board
      * @return true if board has legal moves left
      */
@@ -42,10 +88,10 @@ public class BoardChecker {
 
         return false;
     }
-    
+
     /**
      * Checks board for a winner.
-     * 
+     *
      * @param board valid 1/0/-1 tic-tac-toe board
      * @param marksToWin number of marks in row to win
      * @return 0 if no winner, 1 or -1 for a winner
