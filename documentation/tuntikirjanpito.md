@@ -16,4 +16,5 @@
 | 12.5. | 2    | Debugattu Ultimate-modea, lisätty korostusväri laillisiin siirtoihin|
 |       | 1    | Poistettu ThreeByThree, korvattu NByN:llä|
 |       | 3    | Siirretty ja kirjoitettu lisää testejä|
-| yht   | 30   | |
+|       | 2    | Päivitetty dokumentaatiota|
+| yht   | 32   | |
