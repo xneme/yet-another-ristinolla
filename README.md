@@ -6,9 +6,11 @@ _Lisää **ristinollaa** ohjaajien iloksi._
 
 [Käyttöohje](/documentation/kayttoohje.md)
 
-[Alustava määrittelydokumentti](/documentation/vaatimusmaarittely.md)
+[Määrittelydokumentti](/documentation/vaatimusmaarittely.md)
 
 [Arkkitehtuurikuvaus](/documentation/arkkitehtuuri.md)
+
+[Testausdokumentti](/documentation/testaus.md)
 
 [Tuntikirjanpito](/documentation/tuntikirjanpito.md)
 
