@@ -2,7 +2,7 @@
 _Lisää **ristinollaa** ohjaajien iloksi._
 
 ## Yet-another-ristinolla
-3x3 ja 10x10 perinteinen ristinolla graafisella käyttöliittymällä.
+3x3 ja 10x10 perinteinen ristinolla sekä Ultimate ristinolla graafisella käyttöliittymällä.
 
 [Käyttöohje](/documentation/kayttoohje.md)
 
@@ -17,6 +17,8 @@ _Lisää **ristinollaa** ohjaajien iloksi._
 [Viikko 5](https://github.com/xneme/yet-another-ristinolla/releases/tag/viikko5)
 
 [Viikko 6](https://github.com/xneme/yet-another-ristinolla/releases/tag/viikko6)
+
+[Loppupalautus](https://github.com/xneme/yet-another-ristinolla/releases/tag/loppupalautus)
 
 ## Komentorivitoiminnot
 

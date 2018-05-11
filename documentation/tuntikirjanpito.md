@@ -13,4 +13,7 @@
 |  2.5. | 2    | nxn sovelluslogiikka, 10x10 graafinen versio|
 |       | 2    | javadoc, käyttöohje|
 | 11.5. | 5    | Ultimate-mode lisätty|
-| yht   | 24   | |
+| 12.5. | 2    | Debugattu Ultimate-modea, lisätty korostusväri laillisiin siirtoihin|
+|       | 1    | Poistettu ThreeByThree, korvattu NByN:llä|
+|       | 3    | Siirretty ja kirjoitettu lisää testejä|
+| yht   | 30   | |
