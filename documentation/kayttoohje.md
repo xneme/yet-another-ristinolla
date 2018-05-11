@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa tiedosto [yet-another-ristinolla_viikko6.jar](https://github.com/xneme/yet-another-ristinolla/releases/tag/viikko6)
+Lataa tiedosto [yet-another-ristinolla_loppupalautus.jar](https://github.com/xneme/yet-another-ristinolla/releases/tag/loppupalautus)
 
 ## Ohjelman käynnistäminen
 
