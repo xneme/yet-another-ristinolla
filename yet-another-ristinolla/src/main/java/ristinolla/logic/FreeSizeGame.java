@@ -8,7 +8,7 @@ public class FreeSizeGame implements GameLogic {
     private int turn;
     private int winner;
     private boolean active;
-    private int marksToWin; 
+    private int marksToWin;
     private int size;
 
     public FreeSizeGame(int size, int marksToWin) {
@@ -22,14 +22,16 @@ public class FreeSizeGame implements GameLogic {
         this.marksToWin = marksToWin;
     }
 
-    public FreeSizeGame(int[][] board, int turn) {
+    public FreeSizeGame(int[][] board, int marksToWin, int turn) {
         checker = new BoardChecker();
         this.board = board;
         this.legalmoves = checker.getLegalMoves(board);
+        this.marksToWin = marksToWin;
+        this.size = board.length;
         this.turn = turn;
         this.winner = 0;
         this.active = true;
-        int status = checker.getWinner(board, 3);
+        int status = checker.getWinner(board, marksToWin);
         if (status != 0) {
             this.winner = status;
             this.active = false;

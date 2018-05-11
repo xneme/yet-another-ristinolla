@@ -15,7 +15,6 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import ristinolla.logic.FreeSizeGame;
 import ristinolla.logic.GameLogic;
-import ristinolla.logic.ThreeByThree;
 import ristinolla.logic.UltimateGame;
 
 public class GraphicUI extends Application {
@@ -82,7 +81,7 @@ public class GraphicUI extends Application {
     public Scene threeByThree(Stage primaryStage) {
         primaryStage.setWidth(640);
         primaryStage.setHeight(480);
-        GameLogic game = new ThreeByThree();
+        GameLogic game = new FreeSizeGame(3, 3);
         BorderPane layout = new BorderPane();
         GridPane buttons = new GridPane();
         buttons.setAlignment(Pos.CENTER);
@@ -185,13 +184,13 @@ public class GraphicUI extends Application {
                 button.setFont(Font.font("Monospaced", 40));
                 button.setOnAction((event) -> {
                     this.makeMove(game, button, info, x, y);
-                    this.colorLegal(game.legalMoves(), buttons);
+                    this.colorLegal(game.legalMoves(), game.getBoard(), buttons);
                 });
                 buttons.add(button, i, j);
             }
         }
 
-        this.colorLegal(game.legalMoves(), buttons);
+        this.colorLegal(game.legalMoves(), game.getBoard(), buttons);
 
         layout.setTop(info);
         layout.setCenter(buttons);
@@ -231,13 +230,17 @@ public class GraphicUI extends Application {
         }
     }
 
-    private void colorLegal(boolean[][] legalmoves, GridPane buttons) {
+    private void colorLegal(boolean[][] legalmoves, int[][] bigBoard, GridPane buttons) {
         for (Node node : buttons.getChildren()) {
             int y = GridPane.getRowIndex(node) - 1;
             int x = GridPane.getColumnIndex(node) - 1;
-            node.setStyle(STYLESHEET_MODENA);
-            if (legalmoves[y][x]) {
+            
+            if (bigBoard[y/3][x/3] != 0) {
+                node.setStyle("-fx-base: #e7b6c0;");
+            } else if (legalmoves[y][x]) {
                 node.setStyle("-fx-base: #b6e7c9;");
+            } else {
+                node.setStyle("-fx-base: #ececec;");
             }
         }
     }

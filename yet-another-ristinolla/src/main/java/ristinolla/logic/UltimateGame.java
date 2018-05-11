@@ -20,6 +20,35 @@ public class UltimateGame implements GameLogic {
         this.legalmoves = checker.getLegalMoves(smallBoards, 1, 1);
     }
 
+    public UltimateGame(int[][][][] board, int turn, int bigX, int bigY) {
+        this.bigBoard = new int[3][3];
+        this.smallBoards = board;
+        this.checker = new BoardChecker();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                int status = checker.getWinner(smallBoards[i][j], 3);
+                if (status == 0 && !checker.hasLegalMovesLeft(smallBoards[i][j])) {
+                    bigBoard[i][j] = 2;
+                } else {
+                    bigBoard[i][j] = status;
+                }
+            }
+        }
+        this.winner = checker.getWinner(bigBoard, 3);
+        if (this.winner == 0) {
+            this.active = checker.hasLegalMovesLeft(bigBoard);
+        } else {
+            this.active = false;
+        }
+        this.turn = turn;
+
+        if (this.bigBoard[bigY][bigX] == 0) {
+            this.legalmoves = checker.getLegalMoves(smallBoards, bigX, bigY);
+        } else {
+            this.legalmoves = checker.getLegalMoves(smallBoards);
+        }
+    }
+
     @Override
     public int[][] getBoard() {
         return this.bigBoard;
@@ -53,6 +82,8 @@ public class UltimateGame implements GameLogic {
                     this.active = false;
                     this.legalmoves = new boolean[9][9];
                 }
+            } else if (!checker.hasLegalMovesLeft(smallBoards[bigY][bigX])) {
+                bigBoard[bigY][bigX] = 2;
             }
 
             if (this.bigBoard[smallY][smallX] == 0) {
@@ -60,11 +91,11 @@ public class UltimateGame implements GameLogic {
             } else {
                 this.legalmoves = checker.getLegalMoves(smallBoards);
             }
-            
+
             this.switchTurn();
             return true;
         }
-        
+
         return false;
     }
 
